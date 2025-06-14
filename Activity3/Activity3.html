@@ -1,0 +1,291 @@
+   <!DOCTYPE html>
+    <html>
+        
+        <head>
+            <title>Charles Daniel D. Cunanan</title>
+            <link rel="icon" type="image/x-icon" href="C:\Users\CharlesDanielDCunana\Documents\Cunanan_ITE201\Activity3\favicon (2).ico">
+            <style>
+                :root {
+                    --primary: #fff;
+                    --secondary: #fff;
+                    --accent: #1e1e2f;
+                    --bg: #0a0a1a;
+                    --text: #fff;
+                    --text-alt: #bbb;
+                }
+                body.container {
+                    background: var(--bg);
+                    color: var(--text);
+                    min-height: 100vh;
+                    margin: 0;
+                    overflow-x: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+                    font-family: 'Poppins', 'Courier New', Courier, monospace;
+                }
+                .back-vid, .blackhole-box video {
+                    position: fixed;
+                    top: 0; left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    object-fit: cover;
+                    z-index: -2;
+                    filter: brightness(0.25) blur(2px);
+                }
+                .blackhole-box {
+                    position: fixed;
+                    top: 0; left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    z-index: -1;
+                    pointer-events: none;
+                }
+                .blackhole-box video {
+                    filter: brightness(0.7) blur(0.5px);
+                    opacity: 0.7;
+                }
+                h1 {
+                    color: var(--primary);
+                    font-family: 'Poppins', 'Courier New', Courier, monospace;
+                    text-align: center;
+                    font-size: 2.2rem;
+                    margin: 32px 0 8px 0;
+                    font-weight: 800;
+                    letter-spacing: 1px;
+                }
+                h1.section-title {
+                    font-size: 2.5rem;
+                    margin-top: 48px;
+                }
+                h1 + h1 {
+                    color: var(--secondary);
+                    font-size: 1.3rem;
+                    margin-top: 0;
+                    margin-bottom: 24px;
+                    font-weight: 600;
+                }
+                p, p strong {
+                    color: var(--secondary);
+                    font-family: 'Poppins', 'Courier New', Courier, monospace;
+                    font-size: 1.05rem;
+                    margin: 4px 0 4px 0;
+                    text-align: center;
+                    letter-spacing: 0.5px;
+                    background: rgba(24,24,24,0.5);
+                    border-radius: 12px;
+                    padding: 8px 18px;
+                    display: inline-block;
+                    box-shadow: 0 2px 12px #f7c87322;
+                }
+                p strong {
+                    color: var(--primary);
+                    font-weight: 700;
+                    background: none;
+                    padding: 0;
+                    box-shadow: none;
+                }
+                hr {
+                    width: 60vw;
+                    border: none;
+                    border-top: 2px solid var(--primary);
+                    margin: 32px auto;
+                    opacity: 0.5;
+                }
+                ul, ol, dl {
+                    margin-left: 100px;
+                    margin-bottom: 20px;
+                }
+                ul ul, ol ol, ul ol, ol ul {
+                    margin-left: 50px;
+                }
+                li, dt, dd {
+                    margin-bottom: 8px;
+                }
+                li > p, dt > p, dd > p {
+                    text-align: left;
+                    background: rgba(24,24,24,0.5);
+                    border-radius: 12px;
+                    padding: 8px 18px;
+                    display: inline-block;
+                    box-shadow: 0 2px 12px #f7c87322;
+                }
+                li > p strong, dt > p strong {
+                    font-weight: bold;
+                    color: var(--primary);
+                }
+                .back-btn {
+                    display: inline-block;
+                    margin: 32px auto 0 auto;
+                    padding: 16px 40px;
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    color: #fff;
+                    background: linear-gradient(to right, #00aaa7, #7e42a7, #6600c5, #6070fd, #2a46ff, #0099ff, #008ead);
+                    background-size: 300% 300%;
+                    border: none;
+                    border-radius: 32px;
+                    cursor: pointer;
+                    box-shadow: 0 4px 24px #00fff733;
+                    transition: transform 0.2s, box-shadow 0.2s;
+                    animation: rgbText 3s linear infinite;
+                    text-shadow: 0 2px 12px #0008;
+                }
+                .back-btn:hover {
+                    transform: scale(1.07) translateY(-2px);
+                    box-shadow: 0 8px 32px #00fff744;
+                    color: #0a0a1a;
+                    background: #fff;
+                }
+                @media (max-width: 900px) {
+                    h1 { font-size: 1.4rem; }
+                    h1.section-title { font-size: 1.7rem; }
+                    p { font-size: 0.98rem; padding: 6px 8px; }
+                    hr { width: 90vw; }
+                    ul, ol, dl { margin-left: 20px; }
+                }
+                @media (max-width: 600px) {
+                    h1 { font-size: 1.1rem; }
+                    h1.section-title { font-size: 1.2rem; }
+                    p { font-size: 0.92rem; padding: 4px 4px; }
+                    hr { width: 98vw; }
+                    ul, ol, dl { margin-left: 5px; }
+                }
+            </style>
+            
+        </head>
+
+    
+        <body class="container">
+            <div class="blackhole-box">
+                <video autoplay loop muted playsinline src="../videos/blackhole.mp4"></video>
+                <video class="back-vid" autoplay loop muted playsinline src="../videos/galaxy.mp4"></video>
+            </div>
+
+            <h1>Charles Daniel D. Cunanan</h1>
+            <h1>NU-CLARK BSIT Student</h1>
+            <hr>
+            <h1 class="section-title">Contact Information</h1>
+            <dl>
+                <dt><p><strong>Phone</strong></p></dt>
+                <dd><p>09605615607</p></dd>
+                <dt><p><strong>Email</strong></p></dt>
+                <dd><p>charlesd.cunanan@gmail.com</p></dd>
+                <dt><p><strong>Address</strong></p></dt>
+                <dd><p>Blk 1, Lot 70, Model Community, Pio, Porac, Pampanga</p></dd>
+            </dl>
+            <hr>
+            <h1 class="section-title">Objective Summary</h1>
+            <p>
+                I am Charles Daniel Cunanan a passionate and detail-oriented BSIT Student majoring in Web and Mobile Development,
+                eager to apply technical skills in front-end and back-end development. Proficient in modern web technologies, mobile app frameworks, UI/UX design principles. Seeking for an opportunity to contribute to innovative projects while continuously expanding expertise in software development.
+            </p>
+            <hr>
+            <h1 class="section-title">Educational Background</h1>
+            <dl>
+                <dt><p>Elementary School: Mancatian Elementary School</p></dt>
+                <dd><p><strong>(2011-2016)</strong></p></dd>
+                <dt><p>High School: Porac Model Community High School</p></dt>
+                <dd><p><strong>(2017-2020)</strong></p></dd>
+                <dt><p>Senior High School: Porac Model Community High School</p></dt>
+                <dd><p><strong>(2021-2023)</strong></p></dd>
+                <dt><p>NU-Clark</p></dt>
+                <dd><p><strong>(2023-present)</strong></p></dd>
+            </dl>
+            <hr>
+            <h1 class="section-title">Skills</h1>
+            <ul>
+                <li>
+                    <p><strong>Progamming Language</strong></p>
+                    <ul>
+                        <li><p>Java</p></li>
+                        <li><p>C++</p></li>
+                        <li><p>Python</p></li>
+                        <li><p>Kotlin</p></li>
+                        <li><p>CSS</p></li>
+                        <li><p>Javascript</p></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p><strong>Technical Skills</strong></p>
+                    <ul>
+                        <li><p>Microsoft Word</p></li>
+                        <li><p>Microsoft Excel</p></li>
+                        <li><p>Microsoft Powerpoint</p></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p><strong>Front-End/Design Skills</strong></p>
+                    <ul>
+                        <li><p>Figma</p></li>
+                        <li><p>CSS</p></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p><strong>Back-End Skills</strong></p>
+                    <ul>
+                        <li><p>MySQL</p></li>
+                        <li><p>SQLite</p></li>
+                        <li><p>Firebase</p></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p><strong>Communication Skills</strong></p>
+                    <ul>
+                        <li><p>Team Leader</p></li>
+                    </ul>
+                </li>
+            </ul>
+            <hr>
+            <h1 class="section-title">Experience</h1>
+            <ol type="i">
+                <li><p><strong>NU-CLARK 1st year 3rd Term</strong></p></li>
+                <p>NU-Clark Quiz Bee</p>
+                <li><p><strong>NU-CLARK 2nd year 1st Term</strong></p></li>
+                <p>CodeChum Regional Programming Competition</p>
+                <li><p><strong>NU-CLARK 2nd year 2nd Term</strong></p></li>
+                <p>HAU Cybersecurity Capture The Flag</p>
+            </ol>
+            <hr>
+            <h1 class="section-title">Projects</h1>
+            <ol type="I">
+                <li><p><strong>NU-CLARK 1st year 2nd Term</strong></p></li>
+                <p>Game Development: Soul Leveling</p>
+                <li><p><strong>NU-CLARK 2nd year 2nd Term</strong></p></li>
+                <p>Android Development: ServeOn</p>
+            </ol>
+            <hr>
+            <h1 class="section-title">Certifications or Awards</h1>
+            <ol type="1">
+                <li><p><strong>NU-CLARK 1st year 2nd Term</strong></p></li>
+                <p>DICT Certification</p>
+                <li><p><strong>NU-CLARK 1st year 3rd Term</strong></p></li>
+                <p>COMPTIA ITF+ Certification</p>
+                <li><p><strong>NU-CLARK 2nd year 1st Term</strong></p></li>
+                <p>CodeChum Regional Programming Competition Participant</p>
+                <li><p><strong>NU-CLARK 2nd year 2nd Term</strong></p></li>
+                <p>HAU Cybersecurity Capture The Flag Participant</p>
+            </ol>
+            <hr>
+            <h1 class="section-title">References</h1>
+            <dl>
+                <dt><p><strong>Neo Gonzales</strong></p></dt>
+                <dd><p>- neogonzales@gmail.com</p></dd>
+                <dt><p><strong>Renz Biag</strong></p></dt>
+                <dd><p>- renzbiag@gmail.com</p></dd>
+                <dt><p><strong>Jian Arcilla</strong></p></dt>
+                <dd><p>- jianarcilla@gmail.com</p></dd>
+            </dl>
+            <hr>
+            <a href="../index.html"><button class="back-btn">← Back to Home</button></a>
+        </body>
+    </html>
