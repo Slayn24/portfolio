@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Charles Daniel D. Cunanan</title>
+    <style>
+        :root {
+            --primary: #fff;
+            --secondary: #fff;
+            --accent: #1e1e2f;
+            --bg: #163d5c;
+            --text: #fff;
+            --text-alt: #bbb;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            font-family: 'Poppins', 'Courier New', Courier, monospace;
+        }
+        .back-vid, .blackhole-box video {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -2;
+            filter: brightness(0.25) blur(2px);
+        }
+        .blackhole-box {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .blackhole-box video {
+            filter: brightness(0.7) blur(0.5px);
+            opacity: 0.7;
+        }
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-size: 2.2rem;
+            margin-top: 32px;
+            margin-bottom: 8px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .cake-container {
+            margin-left: 300px;
+            margin-right: 377px;
+            width: 1220px;
+            height: 795px;
+            margin-top: 50px;
+            border: solid;
+            border-radius: 10px;
+            border-width: 2px;
+            background: rgba(24,24,24,0.3);
+            box-shadow: 0 2px 12px #0004;
+            padding-bottom: 16px;
+        }
+        img[usemap] {
+            display: block;
+            border-radius: 8px;
+            /* Do not set max-width or width/height to avoid distorting coords */
+        }
+        .back-btn {
+            display: block;
+            margin: 32px auto 0 auto;
+            padding: 16px 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(to right, #00aaa7, #7e42a7, #6600c5, #6070fd, #2a46ff, #0099ff, #008ead);
+            background-size: 300% 300%;
+            border: none;
+            border-radius: 32px;
+            cursor: pointer;
+            box-shadow: 0 4px 24px #00fff733;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: rgbText 3s linear infinite;
+            text-shadow: 0 2px 12px #0008;
+        }
+        .back-btn:hover {
+            transform: scale(1.07) translateY(-2px);
+            box-shadow: 0 8px 32px #00fff744;
+            color: #0a0a1a;
+            background: #fff;
+        }
+        
+        @media (max-width: 1300px) {
+            .cake-container {
+                margin-left: 5vw;
+                margin-right: 5vw;
+            }
+        }
+        @media (max-width: 900px) {
+            h1 { font-size: 1.4rem; }
+            .cake-container { margin-left: 2vw; margin-right: 2vw; }
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 1.1rem; }
+            .cake-container { margin-left: 0; margin-right: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="blackhole-box">
+        <video autoplay loop muted playsinline src="../videos/blackhole.mp4"></video>
+        <video class="back-vid" autoplay loop muted playsinline src="../videos/galaxy.mp4"></video>
+    </div>
 
+    <h1>Special holiday cake for you!</h1>
+
+    <div class="cake-container">
+        <img src="image.jpg" alt="cake" usemap="#cake" width="1219" height="812">
+        <map name="cake">
+            <area alt="Coffee" title="Coffee" href="Coffee.html" coords="1028,608,1081,606,1013,588,1094,583,1099,562,1009,565,1006,546,1000,521,999,496,997,462,1114,554,1130,540,1138,526,1140,509,1135,496,1121,490,1116,474,1118,464,1010,453,1026,448,1044,446,1065,446,1085,447,1102,453,1054,610,159,656" shape="poly">
+            <area alt="AppleBerryCrumble" title="AppleBerryCrumble" href="AppleBerryCrumble.html" coords="595,681,616,682,646,679,662,679,694,674,711,671,733,667,759,659,779,652,805,635,816,625,824,611,823,595,814,575,804,570,805,552,809,535,808,517,810,496,809,485,799,470,785,462,767,455,748,451,732,448,716,445,698,442,683,440,663,439,647,434,631,433,603,434,590,431,573,431,550,434,524,438,508,441,486,443,475,443,461,445,441,451,426,460,413,469,402,477,389,487,384,499,384,515,385,543,388,557,392,576,388,585,383,602,384,616,387,628,401,644,421,654,448,661,478,671,521,681,560,683,579,684" shape="poly">
+            <area alt="HolidayCoffeeCake" title="HolidayCoffeeCake" href="HolidayCoffeeCake.html" coords="397,370,420,369,451,369,479,365,500,361,521,354,540,349,564,339,573,322,574,310,567,296,564,275,568,245,569,214,568,193,562,175,547,172,530,168,517,160,500,159,484,155,460,157,447,156,426,159,405,151,379,151,362,149,341,155,323,154,306,154,285,159,265,163,246,170,235,175,222,180,214,193,212,206,214,223,214,241,216,262,217,283,219,294,215,301,209,312,210,321,213,331,226,340,234,344,250,353,279,360,303,365,341,371" shape="poly">
+            <area alt="TripleChocolateCake" title="TripleChocolateCake" href="TripleChocolateCake.html" coords="898,447,911,446,943,445,956,447,978,447,1003,443,1022,440,1046,428,1064,416,1074,404,1078,389,1072,376,1070,362,1073,336,1074,315,1075,301,1077,289,1070,274,1057,263,1036,254,1024,247,999,243,984,241,966,240,949,235,921,231,897,232,879,231,859,232,842,235,823,236,810,237,794,241,775,245,758,250,742,261,731,267,722,279,723,296,726,313,728,329,730,345,730,365,728,378,724,388,728,401,740,410,756,421,775,430,804,439,845,447,881,450" shape="poly">
+        </map>
+    </div>
+    <a href="../index.html"><button class="back-btn">← Back to Home</button></a>
+
+</body>
+</html>
