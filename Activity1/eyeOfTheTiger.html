@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Charles Daniel D. Cunanan</title>
+    <style>
+        :root {
+            --primary: #00fff7;
+            --secondary: #fff;
+            --accent: #1e1e2f;
+            --bg: #0a0a1a;
+            --text: #fff;
+            --text-alt: #bbb;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .back-vid, .blackhole-box video {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -2;
+            filter: brightness(0.25) blur(2px);
+        }
+        .blackhole-box {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .blackhole-box video {
+            filter: brightness(0.7) blur(0.5px);
+            opacity: 0.7;
+        }
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        .rgb-animated {
+            font-size: 7vw;
+            font-weight: 900;
+            text-align: center;
+            background: linear-gradient(to right, #00aaa7, #7e42a7, #6600c5, #6070fd, #2a46ff, #0099ff, #008ead);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rgbText 3s linear infinite;
+            text-shadow: 0 4px 32px #000a;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+        @keyframes rgbText {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .song-meta {
+            color: #00aaa7;
+            text-align: center;
+            font-size: 2.5vw;
+            font-weight: 600;
+            text-shadow: 0 2px 12px #0008;
+            margin-bottom: 24px;
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+        .lyrics-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .lyrics {
+            color: var(--secondary);
+            text-align: center;
+            font-size: 1.5vw;
+            font-family: 'Courier New', Courier, monospace;
+            text-shadow: 0 2px 8px #0008;
+            background: rgba(10,10,26,0.7);
+            border-radius: 18px;
+            padding: 2vw 2vw;
+            margin: 2vw auto;
+            display: inline-block;
+            max-width: 900px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 32px #00fff733;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 32px auto 0 auto;
+            padding: 16px 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(to right, #00aaa7, #7e42a7, #6600c5, #6070fd, #2a46ff, #0099ff, #008ead);
+            background-size: 300% 300%;
+            border: none;
+            border-radius: 32px;
+            cursor: pointer;
+            box-shadow: 0 4px 24px #00fff733;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: rgbText 3s linear infinite;
+            text-shadow: 0 2px 12px #0008;
+        }
+        .back-btn:hover {
+            transform: scale(1.07) translateY(-2px);
+            box-shadow: 0 8px 32px #00fff744;
+            color: #0a0a1a;
+            background: #fff;
+        }
+        @media (max-width: 700px) {
+            .rgb-animated { font-size: 12vw; }
+            .song-meta { font-size: 5vw; }
+            .lyrics { font-size: 3.5vw; padding: 4vw 2vw; }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="blackhole-box">
+        <video class="back-vid" autoplay loop muted playsinline src="../videos/galaxy.mp4"></video>
+        <video autoplay loop muted playsinline src="../videos/blackhole.mp4"></video>
+    </div>
+    <div class="container">
+        <h1 class="rgb-animated">Eye of the Tiger</h1>
+        <h3 class="song-meta">Song by Survivor ‧ 1982</h3>
+        <div class="lyrics-box">
+            <p class="lyrics">
+                Risin' up, back on the street <br>
+                Did my time, took my chances <br>
+                Went the distance, now I'm back on my feet <br>
+                Just a man and his will to survive <br><br>
+                So many times, it happens too fast <br>
+                You trade your passion for glory <br>
+                Don't lose your grip on the dreams of the past <br>
+                You must fight just to keep them alive <br><br>
+                It's the eye of the tiger, it's the thrill of the fight <br>
+                Risin' up to the challenge of our rival <br>
+                And the last known survivor stalks his prey in the night <br>
+                And he's watching us all with the eye of the tiger <br><br>
+                Face to face, out on the heat <br>
+                Hangin' tough, stayin' hungry <br>
+                They stack the odds still we take to the street <br>
+                For the kill, with the skill to survive <br><br>
+                It's the eye of the tiger, it's the thrill of the fight <br>
+                Risin' up to the challenge of our rival <br>
+                And the last known survivor stalks his prey in the night <br>
+                And he's watching us all with the eye of the tiger <br><br>
+                Risin' up, straight to the top <br>
+                Had the guts, got the glory <br>
+                Went the distance, now I'm not gonna stop <br>
+                Just a man and his will to survive <br><br>
+                It's the eye of the tiger, it's the thrill of the fight <br>
+                Risin' up to the challenge of our rival <br>
+                And the last known survivor stalks his prey in the night <br>
+                And he's watching us all with the eye of the tiger <br><br>
+                The eye of the tiger <br><br>
+                The eye of the tiger <br><br>
+                The eye of the tiger <br><br>
+                The eye of the tiger <br><br>
+            </p>
+        </div>
+        <a href="../index.html"><button class="back-btn">← Back to Home</button></a>
+    </div>
+</body>
+</html>
