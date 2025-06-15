@@ -1,1 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NU QUEST</title>
+    <style>
+        :root {
+            --primary: #fff;
+            --secondary: #e0e7ff;
+            --accent: #7e42a7;
+            --bg: #0a0a1a;
+            --text: #fff;
+            --text-alt: #bbb;
+            --table-bg: #080020b7;
+            --table-border: #080020b7;
+            --caption-bg: #1725848e;
+            --calendar-holiday: #791e2f;
+            --calendar-week: #3c4a6b;
+            --reminder-bg: #0d49979e;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        }
+        .back-vid, .blackhole-box video {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -2;
+            filter: brightness(0.25) blur(2px);
+        }
+        .blackhole-box {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .blackhole-box video {
+            filter: brightness(0.7) blur(0.5px);
+            opacity: 0.7;
+        }
+        .nav {
+            width: 100%;
+        }
+        .nav-header {
+            background-color: #43037b23;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .nav-header h3 {
+            color: #fff;
+            font-size: 24px;
+            margin: 0;
+            padding-left: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        .nav-sub {
+            background-color: #1E1E1E;
+            height: 10px;
+            margin-bottom: 30px;
+        }
+        .info {
+            margin: 40px auto 40px auto;
+            background: var(--table-bg);
+            border-radius: 18px;
+            box-shadow: 0 4px 32px #0008;
+            max-width: 700px;
+            padding: 32px 40px 40px 40px;
+        }
+        h3 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+        h4 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .reminder {
+            color: #fff;
+            background-color: var(--reminder-bg);
+            border-left: 6px solid #0a0027;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+        label {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-top: 10px;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+        select, input[type="text"], input[type="date"] {
+            color: #333;
+            border: 1px solid #ccc;
+            padding: 6px 12px;
+            display: inline-block;
+            width: 100%;
+            border-radius: 4px;
+            height: 40px;
+            font-size: 14px;
+            margin-bottom: 12px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        select {
+            width: 100%;
+        }
+        .basicInfo input[type="text"],
+        .basicInfo input[type="date"],
+        .basicInfo select {
+            width: 60%;
+            margin-left: 12px;
+            margin-bottom: 18px;
+        }
+        .basicInfo label {
+            width: 35%;
+            min-width: 120px;
+            display: inline-block;
+            text-align: right;
+            margin-right: 8px;
+        }
+        .basicInfo {
+            margin-bottom: 24px;
+        }
+        #data {
+            background-color: var(--reminder-bg);
+            color: #fff;
+            border-radius: 8px;
+            padding: 24px 20px 20px 20px;
+            margin-top: 32px;
+        }
+        #data h5 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        #agreement {
+            margin-right: 12px;
+            margin-bottom: 8px;
+            transform: scale(1.2);
+        }
+        #data label {
+            display: inline;
+            color: #fff;
+            font-weight: 400;
+            margin-left: 0;
+        }
+        #submitbtn {
+            color: #fff;
+            background-color: #5cb85c;
+            border-color: #4cae4c;
+            display: inline-block;
+            padding: 10px 28px;
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            border: none;
+            margin-right: 18px;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #submitbtn:hover {
+            background-color: #449d44;
+        }
+        #cancelbtn {
+            color: #fff;
+            background-color: #d9534f;
+            border-color: #d43f3a;
+            display: inline-block;
+            padding: 10px 28px;
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            border: none;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        #cancelbtn:hover {
+            background-color: #b52b27;
+        }
+        .back-btn {
+            display: block;
+            margin: 32px auto 0 auto;
+            padding: 16px 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(to right, #00aaa7, #7e42a7, #6600c5, #6070fd, #2a46ff, #0099ff, #008ead);
+            background-size: 300% 300%;
+            border: none;
+            border-radius: 32px;
+            cursor: pointer;
+            box-shadow: 0 4px 24px #00fff733;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: rgbText 3s linear infinite;
+            text-shadow: 0 2px 12px #0008;
+        }
+        .back-btn:hover {
+            transform: scale(1.07) translateY(-2px);
+            box-shadow: 0 8px 32px #00fff744;
+            color: #0a0a1a;
+            background: #fff;
+        }
+        @media (max-width: 900px) {
+            .info {
+                padding: 16px 8vw 24px 8vw;
+                max-width: 98vw;
+            }
+            h3 { font-size: 1.3rem; }
+            h4 { font-size: 1rem; }
+            .basicInfo label { min-width: 80px; }
+        }
+        @media (max-width: 600px) {
+            .info {
+                padding: 8px 2vw 12px 2vw;
+            }
+            h3 { font-size: 1.1rem; }
+            h4 { font-size: 0.95rem; }
+            .basicInfo label { min-width: 60px; }
+            #submitbtn, #cancelbtn { font-size: 0.95rem; padding: 8px 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="blackhole-box">
+        <video class="back-vid" autoplay loop muted playsinline src="../videos/galaxy.mp4"></video>
+        <video autoplay loop muted playsinline src="../videos/blackhole.mp4"></video>
+    </div>
+    <div class="nav">
+        <div class="nav-header">
+            <h3>NU QUEST</h3>
+        </div>
+        <div class="nav-sub"></div>
+    </div>
+    <div class="info">
+        <h3>Online Application</h3>
+        <p class="reminder"><b>Reminder</b> <br>
+            Please provide your correct and complete information.<br>
+            Fields marked with asterisk (*) are required.</p>
+        <form action="createAccount.html">
+            <h4>Application Term & Course/Strand</h4>
+            <label for="campus">Campus:</label><br>
+            <select name="campus" id="campus" required>
+                <optgroup label="National Capital Region (NCR)">
+                    <option value="NU Manila">NU Manila</option>
+                    <option value="NU Fairview">NU Fairview</option>
+                    <option value="NU MOA">NU MOA</option>
+                    <option value="NU East Ertigas">NU East Ertigas</option>
+                    <option value="NU Las Piñas">NU Las Piñas</option>
+                </optgroup>
+                <optgroup label="Region III (Central Luzon)">
+                    <option value="NU Baliwag">NU Baliwag</option>
+                    <option value="NU Clark">NU Clark</option>
+                </optgroup>
+                <optgroup label="Region IV-A (CALABARZON)">
+                    <option value="NU Laguna">NU Laguna</option>
+                    <option value="NU Dasmariñas">NU Dasmariñas</option>
+                    <option value="NU Lipa">NU Lipa</option>
+                </optgroup>
+                <optgroup label="Region VI (Western Visayas)">
+                    <option value="NU Bacolod">NU Bacolod</option>
+                </optgroup>
+                <optgroup label="Region VII (Central Visayas)">
+                    <option value="NU Cebu">NU Cebu</option>
+                </optgroup>
+            </select><br><br>
+            <label for="academicYear:">Academic Year:</label><br>
+            <select name="academicYear" id="academicYear" required>
+                <option value="2025-2026">2025-2026</option>
+                <option value="2026-2027">2026-2027</option>
+                <option value="2027-2028">2027-2028</option>
+            </select><br><br>
+            <label for="academicTerm:">Academic Term:</label><br>
+            <select name="academicTerm" id="academicTerm" required>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+            </select><br><br>
+            <label for="applyingFor">Applying For:</label><br>
+            <select name="applyingFor" id="applyingFor" required>
+                <optgroup label="Basic Education">
+                    <option value="Grade 11">Grade 11</option>
+                    <option value="Grade 12">Grade 12</option>
+                </optgroup>
+                <optgroup label="Higher Education">
+                    <option value="Freshman">Freshman</option>
+                    <option value="Transferee">Transferee</option>
+                    <option value="Second Degree Taker">Second Degree Taker</option>
+                    <option value="Cross Enrollee">Cross Enrollee</option>
+                    <option value="Graduate Studies">Graduate Studies</option>
+                </optgroup>
+            </select><br><br>
+            <label for="academicProgram">Academic Program:</label><br>
+            <select name="academicProgram" id="academicProgram" required>
+                <optgroup label="Senior High School (SHS)">
+                    <option value="Accountancy, Business, and Management (ABM)">Accountancy, Business, and Management (ABM)</option>
+                    <option value="Humanities and Social Sciences (HUMSS)">Humanities and Social Sciences (HUMSS)</option>
+                    <option value="Science, Technology, Engineering and Mathematics (STEM)">Science, Technology, Engineering and Mathematics (STEM)</option>
+                </optgroup>
+                <optgroup label="School of Education, Arts, and Sciences (SEAS)">
+                    <option value="BACHELOR OF ARTS IN COMMUNICATION (BAComm)">BACHELOR OF ARTS IN COMMUNICATION (BAComm)</option>
+                    <option value="BACHELOR OF ARTS IN COMMUNICATION (BAComm)">BACHELOR OF ARTS IN COMMUNICATION (BAComm)</option>
+                    <option value="BACHELOR OF ARTS IN POLITICAL SCIENCE (BAPolsci)">BACHELOR OF ARTS IN POLITICAL SCIENCE (BAPolsci)</option>
+                    <option value="BACHELOR OF SCIENCE IN MEDICAL TECHNOLOGY (BSMT)">BACHELOR OF SCIENCE IN MEDICAL TECHNOLOGY (BSMT)</option>
+                    <option value="BACHELOR OF SCIENCE IN PSYCHOLOGY (BSPsy)">BACHELOR OF SCIENCE IN PSYCHOLOGY (BSPsy)</option>
+                </optgroup>
+                <optgroup label="School of Accountancy, Business, and Management (SABM)">
+                    <option value="BACHELOR OF SCIENCE IN ACCOUNTANCY (BSAccountancy)">BACHELOR OF SCIENCE IN ACCOUNTANCY (BSAccountancy)</option>
+                    <option value="BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION MAJOR IN MARKETING MANAGEMENT (BSBA-MktgMgmt)">BACHELOR OF SCIENCE IN BUSINESS ADMINISTRATION MAJOR IN MARKETING MANAGEMENT (BSBA-MktgMgmt)</option>
+                    <option value="BACHELOR OF SCIENCE IN MANAGEMENT ACCOUNTING (BSMA)">BACHELOR OF SCIENCE IN MANAGEMENT ACCOUNTING (BSMA)</option>
+                    <option value="BACHELOR OF SCIENCE IN TOURISM MANAGEMENT (BSTM)">BACHELOR OF SCIENCE IN TOURISM MANAGEMENT (BSTM)</option>
+                </optgroup>
+                <optgroup label="School of Engineering, Architecture and Technology (SEAT)">
+                    <option value="BACHELOR OF SCIENCE IN ARCHITECTURE (BSArch)">BACHELOR OF SCIENCE IN ARCHITECTURE (BSArch)</option>
+                    <option value="BACHELOR OF SCIENCE IN CIVIL ENGINEERING (BSCE)">BACHELOR OF SCIENCE IN CIVIL ENGINEERING (BSCE)</option>
+                    <option value="BACHELOR OF SCIENCE IN COMPUTER ENGINEERING (BSCpE)">BACHELOR OF SCIENCE IN COMPUTER ENGINEERING (BSCpE)</option>
+                    <option value="BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY WITH SPECIALIZATION IN MOBILE AND WEB APPLICATION (BSIT)">BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY WITH SPECIALIZATION IN MOBILE AND WEB APPLICATION (BSIT)</option>
+                </optgroup>
+                <optgroup label="Academic Office (ACAD)">
+                    <option value="DOCTOR OF DENTAL MEDICINE (DMD)">DOCTOR OF DENTAL MEDICINE (DMD)</option>
+                </optgroup>
+            </select><br><br>
+            <h4>Basic Information</h4>
+            <p class="reminder">Note: Please write your names based on your PSA/NSO-copy of birth certificate. For <br>
+                married females who wanted to use their married name, write your names based on <br>
+                your marriage certificate.</p>
+            <div class="basicInfo">
+                <label for="Fname">First Name:</label>
+                <input type="text" id="Fname" name="Fname" required><br>
+                <label for="Mname">Middle Name:</label>
+                <input type="text" id="Mname" name="Mname"><br>
+                <label for="Lname">Last Name:</label>
+                <input type="text" id="Lname" name="Lname" required ><br>
+                <label for="date">Date of Birth:</label>
+                <input type="date" id="date" name="date" required><br>
+                <label for="Email">Email Address:</label>
+                <input type="text" id="Email" name="Email" required><br>
+                <label for="Mobile">Mobile No.:</label>
+                <input type="text" id="Mobile" name="Mobile" required><br>
+                <label for="nationality">Nationality:</label>
+                <select name="nationality" id="nationality" required>
+                    <option value="Filipino">Filipino</option>
+                    <option value="Afghan">Afghan</option>
+                    <option value="Aland Islands">Aland Islands</option>
+                    <option value="Albanian">Albanian</option>
+                    <option value="Algerian">Algerian</option>
+                </select>
+            </div>
+            <div id="data">
+                <h5>Data Privacy Agreement</h5>
+                <input type="checkbox" id="agreement" name="agreement" value="yes" required>
+                <label for="agreement">
+                    <br>
+                    By accomplishing this form, I hereby authorize National University to retain, process, disseminate, <br>
+                    and use for research purposes all the personal data that I provided. I understand and give consent to <br>
+                    National University to use these information to communicate with me either via post, telephone, mobile text, <br>
+                    email or other way possible. In the event that I do not wish to be contacted further, I shall inform the <br>
+                    University accordingly.
+                </label><br><br>
+                <input type="submit" value="Create Account" id="submitbtn">
+                <input type="button" value="Cancel" id="cancelbtn">
+            </div>
+        </form>
+    </div>
+    <a href="../index.html"><button class="back-btn">← Back to Home</button></a>
 
+</body>
+</html>
