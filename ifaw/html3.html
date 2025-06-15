@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donate | IFAW</title>
+    <style>
+            :root {
+            --primary: #007cf9;
+            --accent: #0396A6;
+            --dark: #151515;
+            --light: #f4f4f4;
+            --white: #fff;
+            --radius: 18px;
+            --shadow: 0 8px 32px rgba(0,0,0,0.18);
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        body {
+            overflow-x: hidden;
+            
+        }
+        .pimg-bg {
+            background: url('img/bio.jpg') center center/cover no-repeat;
+            min-height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0; left: 0;
+            z-index: 0;
+            filter: brightness(0.6) blur(2px);
+            opacity: 0;
+            transition: opacity 1.2s cubic-bezier(.77,0,.18,1);
+        }
+        .pimg-bg.visible {
+            opacity: 1;
+        }
+        .donate-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.45);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 1.2s cubic-bezier(.77,0,.18,1);
+        }
+        .donate-overlay.visible {
+            opacity: 1;
+        }
+        .donate-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            width: 100vw;
+        }
+        .donate-left {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        }
+        .donate-right {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            padding-top: 50;
+        }
+        .donate-left {
+            width: 400px;
+            margin-right: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+        .donate-left img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .donate-left-content {
+            padding: 32px 28px 28px 28px;
+            text-align: left;
+        }
+        .donate-left .logoTitle {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+        .donate-left .logoTitle span {
+            color: #222;
+            border-bottom: 4px solid #007cf9;
+            padding-bottom: 0;
+        }
+        .donate-left h2 {
+            font-size: 1.25rem;
+            margin: 18px 0 10px 0;
+            font-weight: 700;
+        }
+        .donate-left p {
+            font-size: 1rem;
+            margin: 0 0 10px 0;
+        }
+        .donate-right {
+            width: 350px;
+            height: 460px;
+            padding: 80px 40px 40px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .donate-right h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .donate-secure-icon {
+            color: #1db954;
+            font-size: 1.2em;
+        }
+        .donate-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+        .donate-tab {
+            padding: 7px 22px;
+            border-radius: 20px;
+            border: 2px solid #e0e0e0;
+            background: #f7f7f7;
+            font-weight: 600;
+            cursor: pointer;
+            color: #222;
+            transition: border 0.2s, background 0.2s;
+        }
+        .donate-tab.active, .donate-tab:focus {
+            border: 2px solid #007cf9;
+            background: #eaf4ff;
+            color: #007cf9;
+        }
+        .donate-amounts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 14px 10px;
+            margin-bottom: 60px;
+            width: 100%;
+            max-width: 330px;
+            justify-items: stretch;
+        }
+        .donate-amount-btn {
+            width: 100%;
+            min-width: 0;
+            box-sizing: border-box;
+            padding: 14px 0;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            background: #f7f7f7;
+            font-weight: 600;
+            cursor: pointer;
+            color: #222;
+            font-size: 1rem;
+            transition: border 0.2s, background 0.2s;
+            text-align: center;
+        }
+        .donate-custom {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            margin-top: 2px;
+        }
+        .donate-custom input {
+            font-size: 1.2rem;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 2px solid #007cf9;
+            width: 120px;
+            margin-right: 6px;
+            outline: none;
+        }
+        .donate-custom span {
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+        .donate-checkbox {
+            color: #fff;
+            margin-bottom: 18px;
+            font-size: 0.98rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .donate-btn {
+            width: 100%;
+            padding: 14px 0;
+            background: #007cf9;
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 2px 12px rgba(0,124,249,0.10);
+        }
+        .donate-btn:hover {
+            background: #005bb5;
+            transform: translateY(-2px) scale(1.03);
+        }
+        .donate-arrow-note {
+            position: absolute;
+            top: 60px;
+            right: -95px;
+            width: 180px;
+            color: #000000;
+            font-family: 'Caveat', cursive, sans-serif;
+            font-size: 0.8rem;
+            text-align: left;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .donate-arrow-note svg {
+            position: absolute;
+            left: -65px;
+            top: 10px;
+        }
+        @media (max-width: 900px) {
+            .donate-container {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+            }
+            .donate-left, .donate-right {
+                margin: 0 0 24px 0;
+            }
+            .donate-arrow-note {
+                display: none;
+            }
+        }
+
+
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(21,21,21,0.92);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2vw;
+        }
+        .logoTitle {
+            font-family: 'Graphik', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -2px;
+        }
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="../index.html" class="logoTitle" style="font-family:'Graphik',Arial,sans-serif;font-weight:900;font-size:1.5rem;letter-spacing:-2px;text-decoration:none;">
+                ← Port<span style="color:#ffffff;border-bottom:4px solid #007cf9;padding-bottom:0;">folio</span>
+            </a>
+            <a href="index.html" class="logoTitle" style="font-family:'Graphik',Arial,sans-serif;font-weight:900;font-size:2.5rem;letter-spacing:-2px;text-decoration:none;">
+                if<span style="color:#ffffff;border-bottom:4px solid #007cf9;padding-bottom:0;">aw</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">Animals</a></li>
+                    <li><a href="#">Get involved</a></li>
+                    <li><a href="#">Explore</a></li>
+                    <li><a href="#">Our work</a></li>
+                    <li><a href="index.html#about">About IFAW</a></li>
+                    <li><a href="index.html#donate">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="pimg-bg"></div>
+    <div class="donate-overlay"></div>
+    <div class="donate-container">
+        <div class="donate-left">
+            <img src="img/biodiversity.jpg" alt="Elephants">
+            <div class="donate-left-content">
+                <span style="font-family:'Graphik',Arial,sans-serif;font-weight:900;font-size:2.5rem;letter-spacing:-2px;">if<span style="color:#007cf9;border-bottom:4px solid #222;padding-bottom:0;">aw</span></span>
+                <h2>Help animals and people thrive together</h2>
+                <p>
+                    Animals worldwide face threats like poaching, trafficking, ocean hazards, disasters, and habitat loss. Iconic species, critical to our planet's health, are endangered.
+                </p>
+                <p>
+                    For over 50 years, IFAW has rescued, rehabilitated, and released animals while restoring their habitats. <b>Help us continue our life-saving work. Donate now</b>
+                </p>
+            </div>
+        </div>
+        <div class="donate-right">
+            <h3>
+                <span class="donate-secure-icon">&#128274;</span>
+                Secure donation
+            </h3>
+            <div class="donate-tabs">
+                <button class="donate-tab" id="tab-once" onclick="setTab('once')">Give once</button>
+                <button class="donate-tab active" id="tab-monthly" onclick="setTab('monthly')">&#10084; Monthly</button>
+            </div>
+            <div class="donate-amounts">
+                <button class="donate-amount-btn" onclick="setAmount(15)">$15</button>
+                <button class="donate-amount-btn active" onclick="setAmount(60)">$60</button>
+                <button class="donate-amount-btn" onclick="setAmount(100)">$100</button>
+                <button class="donate-amount-btn" onclick="setAmount(250)">$250</button>
+                <button class="donate-amount-btn" onclick="setAmount(500)">$500</button>
+                <button class="donate-amount-btn" onclick="setAmount(1000)">$1,000</button>
+            </div>
+            <div class="donate-custom">
+                <span>$</span>
+                <input type="number" id="custom-amount" value="60" min="1" step="1" oninput="customAmountChanged(this)">
+                <span>USD</span>
+            </div>
+            <label class="donate-checkbox">
+                <input type="checkbox" id="dedicate">
+                Dedicate this donation
+            </label>
+            <button class="donate-btn">Donate</button>
+            
+        </div>
+    </div>
+    <script>
+        // Animate background and overlay
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.pimg-bg').classList.add('visible');
+            document.querySelector('.donate-overlay').classList.add('visible');
+
+            // Animate donate-left
+            const left = document.querySelector('.donate-left');
+            left.style.opacity = 0;
+            left.style.transform = 'translateX(-80px)';
+            setTimeout(() => {
+                left.style.transition = 'opacity 1.2s cubic-bezier(.77,0,.18,1), transform 1.2s cubic-bezier(.77,0,.18,1)';
+                left.style.opacity = 1;
+                left.style.transform = 'translateX(0)';
+            }, 100);
+
+            // Animate donate-right
+            const right = document.querySelector('.donate-right');
+            right.style.opacity = 0;
+            right.style.transform = 'translateX(80px)';
+            setTimeout(() => {
+                right.style.transition = 'opacity 1.2s cubic-bezier(.77,0,.18,1), transform 1.2s cubic-bezier(.77,0,.18,1)';
+                right.style.opacity = 1;
+                right.style.transform = 'translateX(0)';
+            }, 300);
+
+            // Animate donate-left img
+            const leftImg = document.querySelector('.donate-left img');
+            leftImg.style.opacity = 0;
+            leftImg.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                leftImg.style.transition = 'opacity 1s cubic-bezier(.77,0,.18,1), transform 1s cubic-bezier(.77,0,.18,1)';
+                leftImg.style.opacity = 1;
+                leftImg.style.transform = 'scale(1)';
+            }, 400);
+
+            // Animate donate-left-content
+            const leftContent = document.querySelector('.donate-left-content');
+            leftContent.style.opacity = 0;
+            leftContent.style.transform = 'translateY(40px)';
+            setTimeout(() => {
+                leftContent.style.transition = 'opacity 1s cubic-bezier(.77,0,.18,1), transform 1s cubic-bezier(.77,0,.18,1)';
+                leftContent.style.opacity = 1;
+                leftContent.style.transform = 'translateY(0)';
+            }, 600);
+
+            // Animate donate-right children (stagger)
+            const rightChildren = [
+                ...right.querySelectorAll('h3, .donate-tabs, .donate-amounts, .donate-custom, .donate-checkbox, .donate-btn')
+            ];
+            rightChildren.forEach((el, i) => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1)';
+                    el.style.opacity = 1;
+                    el.style.transform = 'translateY(0)';
+                }, 800 + i * 120);
+            });
+
+            // Animate donate-arrow-note
+            const arrowNote = document.querySelector('.donate-arrow-note');
+            arrowNote.style.opacity = 0;
+            arrowNote.style.transform = 'translateX(40px)';
+            setTimeout(() => {
+                arrowNote.style.transition = 'opacity 1s cubic-bezier(.77,0,.18,1), transform 1s cubic-bezier(.77,0,.18,1)';
+                arrowNote.style.opacity = 1;
+                arrowNote.style.transform = 'translateX(0)';
+            }, 1600);
+        });
+
+        // Tab switch logic
+        function setTab(tab) {
+            document.getElementById('tab-once').classList.remove('active');
+            document.getElementById('tab-monthly').classList.remove('active');
+            if(tab === 'once') {
+                document.getElementById('tab-once').classList.add('active');
+            } else {
+                document.getElementById('tab-monthly').classList.add('active');
+            }
+        }
+        // Amount button logic
+        function setAmount(val) {
+            document.querySelectorAll('.donate-amount-btn').forEach(btn => btn.classList.remove('active'));
+            let btns = document.querySelectorAll('.donate-amount-btn');
+            for(let btn of btns) {
+                if(btn.textContent.replace(/[^0-9]/g,'') == val) {
+                    btn.classList.add('active');
+                }
+            }
+            document.getElementById('custom-amount').value = val;
+        }
+        // Custom amount logic
+        function customAmountChanged(input) {
+            document.querySelectorAll('.donate-amount-btn').forEach(btn => btn.classList.remove('active'));
+        }
+    </script>
+</body>
+</html>
