@@ -4,109 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CharlesCunanan</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css"> <!-- ====== CSS LINK ====== -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- ====== ICONS FOR THE FOOTER SECTION ====== -->
 </head>
 <body>
     <div class="container">
-        <video class="back-vid" autoplay loop muted plays-inline src="videos/galaxy.mp4"></video>
+        <!-- ====== BACKGROUND VIDEO ====== -->
+        <video class="back-vid" autoplay loop muted plays-inline src="videos/galaxy.mp4"></video> 
+        <!-- ====== I USED A GALAXY BAKCGROUND TO IMPLEMENT AN IMMERSIVE EXPERIENCE TO MY PORTFOLIO ====== -->
+        <!-- ====== I WANT TO ADAPT TO MODERN PORTFOLIO NOWADAYS ON THE JOBMARKET WITHOUT USING FRAMEWORKS JUST PURELY USING HTML CSS JS  ====== -->
 
-
-
+        <!-- ====== HEADER / NAVIGATION ====== -->
         <header>
             <div class="left">
-                <h2><span style="color: #72a1dea2;">Charles</span>Cunanan</h2>
+                <h2><span class="gradient">Charles</span>Cunanan</h2>
             </div>
-
             <ul>
                 <li><a href="#info">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#project">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-
             <div class="box-icons">
-                <p><i class='bx bxl-youtube'></i></p>
-                <p><i class='bx bxl-github'></i></p>
-                <p><i class='bx bxl-linkedin-square'></i></p>
-            </div>
-
-            <div class="menu-icon">
-                <i class='bx bx-menu'></i>
-            </div>            
+                <h2><span class="gradient">Web</span>Developer</h2>
+            </div>           
         </header>
-        <div class="sidebar">
-            <div class="close-icon">
-                <i class='bx bx-x'></i>
-            </div>
-            
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Projects</a></li>
-            </ul>
 
-            <div class="social-sidebar">
-                <a><i class='bx bxl-youtube'></i></a>
-                <a><i class='bx bxl-github'></i></a>
-                <a><i class='bx bxl-linkedin-square'></i></a>
-            </div>
-        </div>
-
+        <!-- ====== BLACKHOLE ANIMATION VIDEO ====== -->
         <div class="blackhole-box">
-            <video autoplay loop muted plays-inline src="videos/blackhole.mp4"></video>
+            <video autoplay loop muted plays-inline src="videos/blackhole.mp4"></video> <!-- ====== BLACKHOLE VIDEO FOR DESIGN ====== -->
         </div>
-
+        
+        <!-- ====== HERO SECTION ====== -->
         <section class="hero ">
             <div class="hero-info autoBlur">
-                <div class="hero-info-title" >
-                    <i class='bx bxl-sketch'></i>
-                    My Portfolio
+                <h1><span class="gradient">Charles Daniel Cunanan</span></h1>
+                <p>My Vision In Actions</p> <!-- ====== SHORT TAGLINE ====== -->
+            </div>
+            <div class="scroll-down"></div> <!-- ====== MINI SCROLLDOWN INDICATOR ====== -->
+        </section>
+        <h2>Take a glimpse of my jouney</h2>
+
+        <!-- ====== ABOUT SECTION ====== -->
+        <section class="hero-about">
+            <div class="hero-about-flex">
+                <div class="hero-about-img">
+                    <img src="images/charles.jpg" alt="Charles Daniel Cunanan"> <!-- ====== THIS IS MY PROFILE PICTURE ====== -->
                 </div>
-
-                <h1>Providing <span class="gradient">my best</span> Project <span class="gradient">Experience</span></h1>
-
-                <p>I am <span class="gradient">Charles Daniel Cunanan</span>, a passionate and detail-oriented BSIT Student majoring in Web and Mobile Development.
-                    Proficient in modern web technologies, mobile app frameworks, and UI/UX design principles. 
-                    Seeking an opportunity to contribute to innovative projects while continuously expanding expertise in software development.</p>
-
-                <button><i class='bx bx-send' ></i>Contact Me</button>
+                <div class="hero-about-info autoBlur"> <!-- ====== SHORT DESCRIPTION ABOUT MYSELF ====== -->
+                    <p>
+                        I am <span class="gradient">Charles Daniel Cunanan</span>, a passionate and <br> 
+                        detail-oriented BSIT Student majoring in Web <br> 
+                        and Mobile Development. Proficient in modern <br> 
+                        web technologies, mobile app frameworks, and <br>
+                        UI/UX design principles. Seeking an opportunity <br>
+                        to contribute to innovative projects while <br>
+                        continuously expanding expertise in software development.
+                    </p>
+                </div>
             </div>
-            
-            <div class="skills-video-box " >
-                <video class="skills-video autoBlur" autoplay loop muted plays-inline src="videos/hero-video.mp4"></video>
-            </div>
-        
-            <div class="scroll-down"></div>
         </section>
 
+        <!-- ====== INFO CARDS SECTION ====== -->
+        <!-- ====== IN THE CARD SECTION I HAVE INCLUDED SOME TESTIMONIALS ON MY DEDICATION ON DEVELOPING ====== -->
         <section id="info" class="info-section">
-            <h1 class="section-title autoDisplay">Hello,There</h1>
+            <h1 class="section-title autoDisplay"><span class="gradient">Hello,There</span></h1>
             <div class="info-cards">
+                <!-- Card 1 -->
                 <div class="card ">
                     <h1>Hi there, I'm Charles</h1>
                     <p>With 2 years of experience, I have honed my skills in both frontend and backend dev, creating dynamic and responsive websites.</p>
-                
                     <img src="images/grid1.png" alt="">
                 </div>
-
+                <!-- Card 2 -->
                 <div class="card">
                     <h1>Tech Stack</h1>
                     <p>I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications.</p>
-                
                     <img src="images/grid2.png" alt="">
                 </div>
-
+                <!-- Card 3 -->
                 <div class="card">
                     <h1>I’m very flexible and adaptable to certain problems</h1>
                     <p>I enjoy solving various complex problems to hone my skills.</p>
-                
                     <video src="videos/glob.mp4" autoplay loop muted plays-inline></video>
-
-                    <button><i class='bx bx-send'></i> Contact Me</button>
                 </div>
-
+                <!-- Card 4 -->
                 <div class="card">
                     <h1>My Passion for Coding</h1>
                     <p>I love solving problems and building things through code. Programming isn't just my profession—it's my passion. I enjoy exploring new technologies, and enhancing my skills.</p>
@@ -114,12 +96,17 @@
                     <img src="images/grid4.png" alt="">
                 </div>
             </div>
+            
+            
         </section>
 
+        
+        <!-- ====== SKILLS SECTION ====== -->
 
         <section id="skills" class="skills-section">
+            
             <h1 class="section-title autoDisplay">
-                My Skills 
+               <span class="gradient">My Skills</span>  
             </h1>
             <div class="skills-box autoDisplay">
                 <img class="skills-image" src="images/digital brain.png" alt="">
@@ -129,33 +116,34 @@
                 </div>
                 
                 <div class="coder">
-                    <h1 class="gradient">Coder <i class='bx bx-code-block' ></i></h1>
+                    <h1 class="gradient">Programmer <i class='bx bx-code-block' ></i></h1>
                     <p>I’m skilled in HTML, CSS, and JavaScript. I also have experience with database management using Firebase and MySQL.</p>
                 </div>
-
-                <div class="slider" reverse="true" style="
-                --width: 100px;
-                --height: 100px;
-                --quantity: 9;
-                ">
+                <!-- Skills Slider -->
+                <!-- ====== THIS IS A TOOL SLIDER WHICH CONTAINS ALL THE TOOLS I USED IN CREATING AND DEVELOPING WEBSITES ====== -->
+                 <div class="slider" reverse="true">
                     <div class="list">
                         <div class="item" style="--position: 1"><img src="images/1.png" alt=""></div>
                         <div class="item" style="--position: 2"><img src="images/2.png" alt=""></div>
                         <div class="item" style="--position: 3"><img src="images/4.webp" alt=""></div>
-                        <div class="item" style="--position: 4"><img src="images/5.webp" alt=""></div>
+                        <div class="item" style="--position: 4"><img src="images/5.png" alt=""></div>
                         <div class="item" style="--position: 5"><img src="images/6.png" alt=""></div>
                         <div class="item" style="--position: 6"><img src="images/7.png" alt=""></div>
                         <div class="item" style="--position: 7"><img src="images/10.png" alt=""></div>
                         <div class="item" style="--position: 8"><img src="images/12.png" alt=""></div>
-                        <div class="item" style="--position: 9"><img src="images/9.png" alt=""></div>
+                        <div class="item" style="--position: 9"><img src="images/5.png" alt=""></div>
                     </div>
-                </div>
-            </div>
+                
+            </div>   
         </section>
 
+        <!-- ====== EXPERIENCE, AWARDS & CERTIFICATES ====== -->
         <section id="info" class="info-section">
-            <h1 class="section-title autoDisplay">My Experience</h1>
+            <h1 class="section-title autoDisplay"><span class="gradient">My Experience</span></h1>
             <div class="info-cards">
+                <!-- Experience Cards -->
+
+                <!-- ====== THESE ARE SOME OF COMPETITIONS THAT I HAVE JOINED THROUGHOUT COLLEGE ====== -->
                 <div class="card ">
                     <h1>CodeChum Regional Programming Competition</h1>
                     <p>NU-CLARK 2nd year 1st Term</p>
@@ -183,12 +171,17 @@
                     <p>NU-CLARK 2nd year 3rd Term</p>
                 
                     <img class="aiPrompt" src="images/aiPrompt.jpg" alt="">
+                    <!-- ====== ALSO ADDED THIS FOR THE UPCOMMING AI PROMPT CHALLENGE THIS JUNE 20 ====== -->
                 </div>
 
-                <h1 class="section-title autoDisplay">Awards and Certificates</h1>
-                <h1></h1>
-                <h1></h1>
 
+                <!-- Awards & Certificates -->
+                <h1 class="section-title autoDisplay"><span class="gradient">Awards and Certificates</span></h1>
+                <h1></h1>
+                <h1></h1> <!-- For Line Break -->
+
+                <!-- ====== THESE ARE SOME OF MY CERTIFICATIONS THROUGHOUT COLLEGE ====== -->
+                <!-- ====== I'VE ALSO INCLUDED MY ACADEMIC ACHIEVEMENTS ====== -->
                 <div class="card">
                     <h1>Dean's Lister Award 2nd Honors</h1>
                     <p>NU-CLARK 1st year 1st Term</p>
@@ -234,185 +227,228 @@
         </section>
 
 
-
-        <section id="project" class="my-project">
-            <h1 class="section-title autoDisplay">My Projects</h1>
+    <!-- ====== PROJECTS SECTION (PART 1) ====== -->
+    <section id="project" class="my-project">
+            <h1 class="section-title autoDisplay"><span class="gradient">My Projects</span></h1>
+            <!-- Project Cards -->
             <div class="project-card">
                 <div class="project-vidbox autoBlur" >
-                    <video loop id="projectVideo1" src="videos/project1.mp4"></video>
-                    <div class="hover-sign"></div>
+                    <video loop id="projectVideo1" src="videos/video.mp4"></video> <!-- ====== THESE VIDEOS ARE HOVERABLE TO PREVIEW ====== -->
                 </div>
                 <div class="project-info fadein-left">
                     <h1>Eye <span class="gradient">of the</span> Tiger</h1>
                     <p>A simple HTML page featuring the lyrics of "Eye of the Tiger" with basic formatting.</p>
-                    <button onclick="window.location.href='Activity1/eyeOfTheTiger.html'"><i class='bx bx-link-external'></i> Visit</button>
+                    <button onclick="window.location.href='Activity1/eyeOfTheTiger.html'"><i class='bx bx-link-external'></i> Visit</button> 
+                    <!-- ====== ACTIVITY 1 - EYE OF THE TIGER ====== -->
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-vidbox autoBlur">
-                    <video loop id="projectVideo2" src="videos/project2.mp4"></video>
+                    <video loop id="projectVideo2" src="videos/video1.mp4"></video> <!-- ====== THESE VIDEOS ARE HOVERABLE TO PREVIEW ====== -->
                 </div>
                 <div class="project-info fadein-left">
                     <h1> Resume <span class="gradient">Without</span> List </h1>
                     <p>A resume layout using only paragraphs and line breaks, no lists.</p>
                     <button onclick="window.location.href='Activity2/resume.html'"><i class='bx bx-link-external'></i> Visit</button>
+                    <!-- ====== ACTIVITY 2 - RESUME W/O LIST ====== -->
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-vidbox autoBlur">
-                    <video loop id="projectVideo3" src="videos/project3.mp4"></video>
+                    <video loop id="projectVideo3" src="videos/video2.mp4"></video> <!-- ====== THESE VIDEOS ARE HOVERABLE TO PREVIEW ====== -->
                 </div>
                 
                 <div class="project-info fadein-left">
                     <h1>Resume <span class="gradient">With</span>  List</h1>
                     <p>A resume layout using HTML lists for better structure and readability.</p>
                     <button onclick="window.location.href='Activity3/Activity3.html'"><i class='bx bx-link-external'></i> Visit</button>
+                    <!-- ====== ACTIVITY 3 - RESUME W/ LIST ====== -->
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-vidbox autoBlur">
-                    <video loop id="projectVideo4" src="videos/project3.mp4"></video>
+                    <video loop id="projectVideo4" src="videos/video3.mp4"></video> <!-- ====== THESE VIDEOS ARE HOVERABLE TO PREVIEW ====== -->
                 </div>
                 
                 <div class="project-info fadein-left">
                     <h1>Map <span class="gradient">Area</span></h1>
                     <p>An interactive image map with clickable areas linked to different locations.</p>
                     <button onclick="window.location.href='Activity4/Activity4.html'"><i class='bx bx-link-external'></i> Visit</button>
+                    <!-- ====== ACTIVITY 4 - MAP AREA ====== -->
+                    <!-- ====== YOU CAN ZOOM OUT A LITTLE BIT(10%) FOR THE BEST EXPERIENCE AND ACCURATE MAP AREA ====== -->
                 </div>
             </div>
 
 
             <div class="project-card">
                 <div class="project-vidbox autoBlur" >
-                    <video loop id="projectVideo1" src="videos/project1.mp4"></video>
-                    <div class="hover-sign"></div>
+                    <video loop id="projectVideo5" src="videos/video4.mp4"></video> <!-- ====== THESE VIDEOS ARE HOVERABLE TO PREVIEW ====== -->
                 </div>
                 <div class="project-info fadein-left">
                     <h1>Table <span class="gradient">Colspan</span> and <span class="gradient">Rowspan</span></h1>
                     <p>Demonstrates HTML tables with colspan/rowspan.</p>
                     <button onclick="window.location.href='Activity5/Activity5Table1.html'"><i class='bx bx-link-external'></i> Visit</button>
+                    <!-- ====== ACTIVITY 5 - COLSPAN ROWSPAN ====== -->
                 </div>
             </div>
 
         </section>
 
         <br><br>
-
+        <!-- ====== PROJECTS SECTION (PART 2) ====== -->
         <section id="project" class="my-project">
-
+            <!-- Project Cards -->
             <div class="project-card">
                 <div class="project-vidbox autoBlur">
-                    <video loop id="projectVideo2" src="videos/project2.mp4"></video>
+                    <video loop id="projectVideo6" src="videos/video5.mp4"></video> <!-- ====== THESE VIDEOS ARE HOVERABLE TO PREVIEW ====== -->
                 </div>
                 <div class="project-info fadein-left">
                     <h1> Calendar <span class="gradient">without</span> div </h1>
                     <p>A calendar layout created using only tables, no div elements.</p>
                     <button onclick="window.location.href='Activity6/Activity6.html'"><i class='bx bx-link-external'></i> Visit</button>
+                    <!-- ====== ACTIVITY 6 - CALENDAR W/O DIV ====== -->
+                    <!-- ====== I USED DIV FOR DESIGN PURPOSES ONLY NOT ON THE CONTENT AND STRUCTURE ====== -->
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-vidbox autoBlur">
-                    <video loop id="projectVideo3" src="videos/project3.mp4"></video>
+                    <video loop id="projectVideo7" src="videos/video5.mp4"></video> <!-- ====== THESE VIDEOS ARE HOVERABLE TO PREVIEW ====== -->
                 </div>
                 
                 <div class="project-info fadein-left">
                     <h1>Calendar <span class="gradient">with</span>  div</h1>
                     <p>A calendar layout using divs and CSS for flexible styling.</p>
                     <button onclick="window.location.href='Activity7/Activity7.html'"><i class='bx bx-link-external'></i> Visit</button>
+                    <!-- ====== ACTIVITY 7 || FINALS ACTIVITY 1 - CALENDAR W/ DIV ====== -->
                 </div>
             </div>
 
                 <div class="project-card">
                 <div class="project-vidbox autoBlur">
-                    <video loop id="projectVideo3" src="videos/project3.mp4"></video>
+                    <video loop id="projectVideo8" src="videos/video6.mp4"></video> <!-- ====== THESE VIDEOS ARE HOVERABLE TO PREVIEW ====== -->
                 </div>
                 
                 <div class="project-info fadein-left">
                     <h1>NU <span class="gradient">Quest</span></h1>
                     <p>A styled application form for National University (NU Quest).</p>
                     <button onclick="window.location.href='Activity8/Activity8.html'"><i class='bx bx-link-external'></i> Visit</button>
+                    <!-- ====== ACTIVITY 8 || FINALS ACTIVITY 2 - NU QUEST CLONE ====== -->
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-vidbox autoBlur">
-                    <video loop id="projectVideo3" src="videos/project3.mp4"></video>
+                    <video loop id="projectVideo9" src="videos/video7.mp4"></video> <!-- ====== THESE VIDEOS ARE HOVERABLE TO PREVIEW ====== -->
                 </div>
                 
                 <div class="project-info fadein-left">
                     <h1>Navigation <span class="gradient">Animation</span>  Transition</h1>
                     <p>A collection of HTML files demonstrating navigation, animation, and transition effects. (Bookmarked page)</p>
                     <button onclick="window.location.href='FinalsActivity3/Activity3.html'"><i class='bx bx-link-external'></i> Visit</button>
+                    <!-- ====== ACTIVITY 9 || FINALS ACTIVITY 3 - NAVIGATION ANIMATION TRANSITION ====== -->
                 </div>
             </div>
-            
 
             <div class="project-card">
-                <div class="project-vidbox autoBlur" >
-                    <video loop id="projectVideo1" src="videos/project1.mp4"></video>
-                    <div class="hover-sign"></div>
+                <div class="project-vidbox autoBlur">
+                    <video loop id="projectVideo10" src="videos/ifaw.mp4"></video> <!-- ====== THESE VIDEOS ARE HOVERABLE TO PREVIEW ====== -->
                 </div>
+                
                 <div class="project-info fadein-left">
                     <h1>Final <span class="gradient">Group</span> Project</h1>
                     <h2>If<span class="gradient">aw</span></h2>
                     <p>A non profit website for animal walfare</p>
                     <button onclick="window.location.href='ifaw/index.html'"><i class='bx bx-link-external'></i> Visit</button>
+                    <!-- ====== FINAL GROUP PROJECT ====== -->
                 </div>
             </div>
 
         </section>
 
         <br>
-
-        <section id="contact" class="contact-section ">
-            <h1 class="section-title autoDisplay">Contacts</h1>
-
-            <div class="social-box autoBlur">
-                <a href="#"><i class='bx bxs-phone'></i> +63 960 561 5607</a>
-                <a href="#"><i class='bx bxl-telegram' ></i> cunanancd@students.nu-clark.edu.ph</a>
-                <a href="#"><i class='bx bxl-linkedin-square' ></i> charlesd.cunanan@gmail.com</a>
-                <div class="social-icons">
-                    <a href="#"><i class='bx bxl-youtube' ></i></a>
-                    <a href="#"><i class='bx bxl-twitter' ></i></a>
-                    <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+ 
+        <!-- ====== CONTACT SECTION ====== -->
+        <section id="contact" class="contact-section">
+            <h1 class="section-title autoDisplay"><span class="gradient">Contact</span></h1>
+            <div class="contact-bg">
+                <div class="contact-flex">
+                    <div class="contact-info">
+                        <h2>Let's Connect</h2>
+                        <p>
+                            Wheter you're looking to build a new website, improve your existing platform,<br>
+                             or bring a unique project to file. i'm here to help.
+                        </p>
+                        <p>Email: <a href="mailto:neo.gonzales@email.com">charlesd.cunanan@gmail.com</a></p>
+                        <p>Phone: <a href="tel:+639123456789">+63 960 561 5607</a></p>
+                        <p>LinkedIn: <a href="#">/in/CharlesCunanan</a></p>
+                    </div>
+                    <form class="contact-form" autocomplete="off">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="4" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
                 </div>
             </div>
-
-            <div class="contact-box autoBlur">
-                <p>Wheter you're looking to build a new website, improve your existing platform, or bring a unique project to file. i'm here to help.</p>
-            
-                <p>Full Name</p>
-                <input placeholder="Your Full name" type="full name">
-
-                <p>Email Address</p>
-                <input placeholder="Your Email" type="Contact">
-
-                <p>Your Message</p>
-                <input  class="input-message" type="contact" placeholder="shaire your thoughts...">
-
-                <button>Send Message <i class='bx bx-mail-send'></i></button>
-            </div>
-        
-        </section> 
-        
-        <section class="footer">
-            <h1>2025, by Charles</h1>
-            <div class="box-icons">
-                <p><i class='bx bxl-youtube'></i></p>
-                <p><i class='bx bxl-github'></i></p>
-                <p><i class='bx bxl-linkedin-square'></i></p>
-            </div>
         </section>
- 
-        
 
-
-        
-    </div>
-    <script src="app.js"></script>
+        <!-- ====== FOOTER SECTION ====== -->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Footer Brand and Socials -->
+                <div class="footer-brand">
+                    <h2>MY PORTFOLIO</h2>
+                    <div class="footer-socials">
+                        <!-- Social links now open in new tabs and go to actual profiles (replace # with your real links) -->
+                        <a href="https://www.linkedin.com/in/CharlesCunanan" target="_blank" rel="noopener"><i class='bx bxl-linkedin-square'></i></a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener"><i class='bx bxl-facebook-circle'></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener"><i class='bx bxl-tiktok'></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener"><i class='bx bxl-youtube'></i></a>
+                    </div>
+                    <span class="footer-copyright">© 2025 CHARLES</span>
+                </div>
+                <!-- Footer Links -->
+                <div class="footer-links">
+                    <div>
+                        <h3>projects</h3>
+                        <ul>
+                            <li><a href="Activity1/eyeOfTheTiger.html">Eye of the tiger</a></li>
+                            <li><a href="Activity2/resume.html">Resume pt.1</a></li>
+                            <li><a href="Activity3/Activity3.html">Resume pt.2</a></li>
+                            <li><a href="Activity4/Activity4.html">Map area</a></li>
+                            <li><a href="Activity5/Activity5Table1.html">Table colspan & rowspan</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>projects</h3>
+                        <ul>
+                            <li><a href="Activity6/Activity6.html">Calendar pt.1</a></li>
+                            <li><a href="Activity7/Activity7.html">Calendar pt.2</a></li>
+                            <li><a href="Activity8/Activity8.html">NU Quest</a></li>
+                            <li><a href="FinalsActivity3/Activity3.html">Navigation</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Browse</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#info">About</a></li>
+                            <li><a href="#project">Projects</a></li>
+                            <li><a href="ifaw/index.html">Group Project</a></li>
+                            <li><a href="#contact">Contacts</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h1 class="footer-bg">CHARLES <br> CUNANAN</h1><!-- ====== Footer Logo ====== -->
+            </div>
+        </footer>
+    <script src="app.js"></script> <!-- ====== Javascript Link ====== -->
 </body>
 </html>
