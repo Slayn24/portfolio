@@ -4,13 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triple Chocolate Cake</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            color: aliceblue;
+            font-family: 'Poppins', 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .blackhole-box {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .back-vid, .blackhole-box video {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -2;
+            filter: brightness(0.25) blur(2px);
+        }
+        .blackhole-box video {
+            filter: brightness(0.7) blur(0.5px);
+            opacity: 0.7;
+        }
+        h1 {
+            color: aliceblue;
+            text-align: center;
+            font-size: 50px;
+            margin-top: 40px;
+            margin-bottom: 32px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 12px #0008;
+        }
+        img {
+            display: block;
+            margin: 0 auto 40px auto;
+            border-radius: 12px;
+            max-width: 90vw;
+            box-shadow: 0 2px 12px #0008;
+        }
+        .back-link {
+            color: aliceblue;
+            font-size: 30px;
+            margin-left: 300px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .back-link:hover {
+            color: #f7c873;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .back-link { font-size: 1.2rem; margin-left: 0; }
+            img { max-width: 100vw; }
+        }
+    </style>
 </head>
-<body style ="background-color: #b7060c;">
-    <h1 style="color: aliceblue; text-align: center; font-size: 50px;">Triple Chocolate Cake</h1>
-    <p style="color: aliceblue; text-align: center; font-size: 30px;">Made with belgian Chocolate</p>
+<body>
+    <div class="blackhole-box">
+        <video autoplay loop muted playsinline src="../videos/blackhole.mp4"></video>
+        <video class="back-vid" autoplay loop muted playsinline src="../videos/galaxy.mp4"></video>
+    </div>
+    <h1>Triple Chocolate Cake</h1>
+    <p>Made with belgian Chocolate</p>
 
     <img src="https://thecrumbykitchen.com/wp-content/uploads/2019/03/Triple-Chocolate-Cake-4.jpg" alt="coffeecake"  >
-    <a href="Activity4.html" style="color: aliceblue; font-size: 30px; margin-left: 700px;">back</a>
+    <a href="Activity4.html">back</a>
     
     
 </body>
